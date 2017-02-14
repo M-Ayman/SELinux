@@ -1,0 +1,8 @@
+# tags:
+
+- name: add the OS specific variables
+  include_vars: "{{ ansible_os_family }}.yml"
+  tags: [selinux_pkg,selinux_config]
+
+- name: Load Configuration for a specific OS
+  include: "{{ ansible_os_family }}.yml"
